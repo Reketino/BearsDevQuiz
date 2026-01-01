@@ -35,6 +35,23 @@ export default function Quiz({ codeLang }: Props) {
         {question.examples[codeLang]}
       </pre>
 
+
+      <section className="space-y-2">
+        {question.options.map((option) => (
+        <button
+        key={option.id}
+        onClick={() => setSelected(option.id)}
+        disabled={showResult}
+        className={`
+            w-full text-left p-3 rounded border
+            ${selected === option.id ? "border-blue-500" : "border-white/20"}
+            `}
+            >
+                {option.text}
+            </button>
+        ))}
+      </section>
+
     </main>
   )
 }
