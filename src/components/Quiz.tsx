@@ -52,6 +52,25 @@ export default function Quiz({ codeLang }: Props) {
         ))}
       </section>
 
+      {!showResult ? (
+        <button
+        disabled={!selected}
+        onClick={() => setShowResult(true)}
+        className="mt-4"
+        >
+            Sjekk svar
+        </button>
+        ) : (
+            <section className="space-y-2">
+                <p className="font-semibold">
+                    {selectedOption?.correct ? "✅Riktig" : "❌Feil"}
+                </p>
+                <p>{question.explanation}</p>
+                <button onClick={nextQuestion}>
+                    Neste spørsmål →
+                </button>
+            </section>
+      )}
     </main>
   )
 }
