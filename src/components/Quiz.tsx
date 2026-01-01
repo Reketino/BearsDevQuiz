@@ -24,8 +24,17 @@ export default function Quiz({ codeLang }: Props) {
         setIndex((prev) => (prev + 1) % quiz.length)
     }
   return (
-    <div>
-      
-    </div>
+    <main className="space-y-6">
+      <h2 className="text-xl font-bold">
+        {question.question}
+      </h2>
+
+      <pre className="
+      bg-black/80 text-green-300 
+      p-4 rounded">
+        {question.examples[codeLang]}
+      </pre>
+
+    </main>
   )
 }
